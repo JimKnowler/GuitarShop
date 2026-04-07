@@ -5,6 +5,7 @@ class Order():
         self.items = []
     def add_item(self, product, quantity):
         self.items.append((product, quantity))
+        product.hold += 1
 
     def get_items(self):
         return self.items
@@ -25,3 +26,9 @@ class TestClass(unittest.TestCase):
         order.add_item(product, 1)
         order_items = order.get_items()
         self.assertEqual(order_items,[(product,1)])
+
+    def test_temporary_hold_placed_on_product(self):
+        order = Order()
+        product = Product(327,7,0)
+        order.add_item(product, 1)
+        self.assertEqual(product.hold, 1)
