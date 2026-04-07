@@ -17,9 +17,6 @@ class Product():
         self.hold = hold
 
 class TestClass(unittest.TestCase):
-    def test_basic(self):
-        self.assertEqual(1, 1)
-
     def test_new_item_added_to_order(self):
         order = Order()
         product = Product(327,7,0)
