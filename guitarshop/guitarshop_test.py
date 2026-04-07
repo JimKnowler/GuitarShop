@@ -1,5 +1,7 @@
 import unittest
 
+from product import Product
+ 
 class Order():
     def __init__(self):
         self.items = []
@@ -9,12 +11,6 @@ class Order():
 
     def get_items(self):
         return self.items
-
-class Product():
-    def __init__(self, id, stock, hold):
-        self.id = id
-        self.stock = stock
-        self.hold = hold
 
 class TestClass(unittest.TestCase):
     def test_new_item_added_to_order(self):
