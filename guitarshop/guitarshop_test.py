@@ -1,16 +1,7 @@
 import unittest
 
 from product import Product
- 
-class Order():
-    def __init__(self):
-        self.items = []
-    def add_item(self, product, quantity):
-        self.items.append((product, quantity))
-        product.hold += 1
-
-    def get_items(self):
-        return self.items
+from order import Order
 
 class TestClass(unittest.TestCase):
     def test_new_item_added_to_order(self):
